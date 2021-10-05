@@ -38,12 +38,17 @@ return [
     'guards' => [
         'web' => [
             'driver' => 'session',
-            'provider' => 'users',
+            'provider' => 'student',
         ],
 
-        'api' => [
-            'driver' => 'token',
-            'provider' => 'users',
+        'api-student' => [
+            'driver' => 'passport',
+            'provider' => 'student',
+            'hash' => false,
+        ],
+        'api-employee' => [
+            'driver' => 'passport',
+            'provider' => 'employee',
             'hash' => false,
         ],
     ],
@@ -66,9 +71,14 @@ return [
     */
 
     'providers' => [
-        'users' => [
+        'student' => [
             'driver' => 'eloquent',
-            'model' => App\Models\User::class,
+            'model' => \App\Models\User\Student::class,
+        ],
+
+        'employee' => [
+            'driver' => 'eloquent',
+            'model' => \App\Models\User\Employee::class,
         ],
 
         // 'users' => [
@@ -113,5 +123,5 @@ return [
     */
 
     'password_timeout' => 10800,
-
+    'token' => env('AUTH_TOKEN', 'somekey'),
 ];

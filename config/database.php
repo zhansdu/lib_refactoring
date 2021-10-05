@@ -15,7 +15,7 @@ return [
     |
     */
 
-    'default' => env('DB_CONNECTION', 'mysql'),
+    'default' => env('DB_CONNECTION', 'library'),
 
     /*
     |--------------------------------------------------------------------------
@@ -90,7 +90,34 @@ return [
             'prefix' => '',
             'prefix_indexes' => true,
         ],
-
+        'library' => [
+            'driver' => 'oracle',
+            'tns' => env('DB_TNS', ''),
+            'host' => env('DB_HOST', ''),
+            'port' => env('DB_PORT', '1521'),
+            'database' => env('DB_DATABASE', ''),
+            'username' => env('DB_USERNAME', ''),
+            'password' => env('DB_PASSWORD', ''),
+            'charset' => env('DB_CHARSET', 'AL32UTF8'),
+            'prefix' => env('DB_PREFIX', ''),
+            'prefix_schema' => env('DB_SCHEMA_PREFIX', ''),
+            'edition' => env('DB_EDITION', 'ora$base'),
+            'server_version' => env('DB_SERVER_VERSION', '11g'),
+        ],
+        'login' => [
+            'driver' => 'oracle',
+            'tns' => env('DB_TNS_LOGIN', ''),
+            'host' => env('DB_HOST_LOGIN', ''),
+            'port' => env('DB_PORT_LOGIN', ''),
+            'database' => env('DB_DATABASE_LOGIN', ''),
+            'username' => env('DB_USERNAME_LOGIN', ''),
+            'password' => env('DB_PASSWORD_LOGIN', ''),
+            'charset' => env('DB_CHARSET_LOGIN', 'AL32UTF8'),
+            'prefix' => env('DB_PREFIX_LOGIN', ''),
+            'prefix_schema' => env('DB_SCHEMA_PREFIX_LOGIN', ''),
+            'edition' => env('DB_EDITION_LOGIN', 'ora$base'),
+            'server_version' => env('DB_SERVER_VERSION_LOGIN', '11g'),
+        ],
     ],
 
     /*
@@ -123,7 +150,7 @@ return [
 
         'options' => [
             'cluster' => env('REDIS_CLUSTER', 'redis'),
-            'prefix' => env('REDIS_PREFIX', Str::slug(env('APP_NAME', 'laravel'), '_').'_database_'),
+            'prefix' => env('REDIS_PREFIX', Str::slug(env('APP_NAME', 'laravel'), '_') . '_database_'),
         ],
 
         'default' => [

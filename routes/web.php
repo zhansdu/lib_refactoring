@@ -13,6 +13,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::post('login', 'Auth\LoginController')->name('web-login');
+Route::post('logout', 'Auth\LogoutController')->name('web-logout');
+Route::get('user', 'Auth\UserController')->name('web-user');
+
+Route::group(['prefix' => 'admin', 'middleware' => ['web', 'web-admin']], static function () {
+    Route::get('{any?}', static function () {
+        return view('admin');
+    })->where('any', '.*')->name('admin');
+});
+
+Route::group(['prefix' => ''], static function () {
+    Route::get('{any}', static function () {
+        return view('user');
+    })->where('any', '.*')->middleware('web')->name('user');
 });

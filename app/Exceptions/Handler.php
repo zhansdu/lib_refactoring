@@ -2,7 +2,9 @@
 
 namespace App\Exceptions;
 
+use Illuminate\Database\QueryException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Throwable;
 
 class Handler extends ExceptionHandler
 {
@@ -32,6 +34,25 @@ class Handler extends ExceptionHandler
      */
     public function register()
     {
-        //
+        $this->reportable(function (Throwable $e) {
+            //
+        });
+    }
+
+    public function render($request, Throwable $e)
+    {
+        if ($e instanceof QueryException) {
+            $e = new QueryResponseException($e->getSql(), $e->getBindings(), $e->getPrevious());
+        }
+
+        if ($e instanceof QueryResponseException) {
+            return $e->render($request);
+        }
+
+        if ($e instanceof ReturnResponseException) {
+            return $e->render($request);
+        }
+
+        return parent::render($request, $e);
     }
 }

@@ -1,0 +1,49 @@
+@use "sass:math";
+$darkgrey:#B5BAC7;
+$grey:#9C9FA7;
+$lightgrey:#F4F4F4;
+$white:#fff;
+$black:#333;
+$red:#9e2629;
+$lightblue:rgba( 163, 200, 255, .25);
+$blue:#274FB6;
+$darkblue:#00246A;
+$green:#00BB78;
+$orange:#FF9D29;
+$transparent:transparent;
+// setting colors
+$colors: ( "darkgrey":$darkgrey, "grey":$grey, "lightgrey":$lightgrey, "white":$white, "black":$black, "red":$red, "lightblue":$lightblue, "blue":$blue, "darkblue":$darkblue, "green":$green, "orange":$orange, "transparent":$transparent);
+@each $name,
+$color in $colors {
+    .bg-#{$name} {
+        background-color: $color;
+    }
+    .text-#{$name} {
+        color: $color;
+    }
+    .border-#{$name} {
+        border-color: $color;
+    }
+    .outline-#{$name} {
+        color: $color;
+        border: $color;
+         :hover {
+            background-color: $color;
+            color: white;
+        }
+    }
+}
+
+// font sizes from 12 to 40
+@for $value from 12 to 42 {
+    @if $value%2==0 {
+        .font-size-#{$value} {
+            font-size: math.div($value, 16)+em;
+        }
+    }
+}
+
+$transition:.3s;
+* {
+    transition: $transition;
+}

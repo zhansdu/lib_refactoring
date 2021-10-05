@@ -1,0 +1,315 @@
+.bg-darkgrey {
+  background-color: #B5BAC7;
+}
+
+.text-darkgrey {
+  color: #B5BAC7;
+}
+
+.border-darkgrey {
+  border-color: #B5BAC7;
+}
+
+.outline-darkgrey {
+  color: #B5BAC7;
+  border: #B5BAC7;
+}
+.outline-darkgrey :hover {
+  background-color: #B5BAC7;
+  color: white;
+}
+
+.bg-grey {
+  background-color: #9C9FA7;
+}
+
+.text-grey {
+  color: #9C9FA7;
+}
+
+.border-grey {
+  border-color: #9C9FA7;
+}
+
+.outline-grey {
+  color: #9C9FA7;
+  border: #9C9FA7;
+}
+.outline-grey :hover {
+  background-color: #9C9FA7;
+  color: white;
+}
+
+.bg-lightgrey {
+  background-color: #F4F4F4;
+}
+
+.text-lightgrey {
+  color: #F4F4F4;
+}
+
+.border-lightgrey {
+  border-color: #F4F4F4;
+}
+
+.outline-lightgrey {
+  color: #F4F4F4;
+  border: #F4F4F4;
+}
+.outline-lightgrey :hover {
+  background-color: #F4F4F4;
+  color: white;
+}
+
+.bg-white {
+  background-color: #fff;
+}
+
+.text-white {
+  color: #fff;
+}
+
+.border-white {
+  border-color: #fff;
+}
+
+.outline-white {
+  color: #fff;
+  border: #fff;
+}
+.outline-white :hover {
+  background-color: #fff;
+  color: white;
+}
+
+.bg-black {
+  background-color: #333;
+}
+
+.text-black {
+  color: #333;
+}
+
+.border-black {
+  border-color: #333;
+}
+
+.outline-black {
+  color: #333;
+  border: #333;
+}
+.outline-black :hover {
+  background-color: #333;
+  color: white;
+}
+
+.bg-red {
+  background-color: #9e2629;
+}
+
+.text-red {
+  color: #9e2629;
+}
+
+.border-red {
+  border-color: #9e2629;
+}
+
+.outline-red {
+  color: #9e2629;
+  border: #9e2629;
+}
+.outline-red :hover {
+  background-color: #9e2629;
+  color: white;
+}
+
+.bg-lightblue {
+  background-color: rgba(163, 200, 255, 0.25);
+}
+
+.text-lightblue {
+  color: rgba(163, 200, 255, 0.25);
+}
+
+.border-lightblue {
+  border-color: rgba(163, 200, 255, 0.25);
+}
+
+.outline-lightblue {
+  color: rgba(163, 200, 255, 0.25);
+  border: rgba(163, 200, 255, 0.25);
+}
+.outline-lightblue :hover {
+  background-color: rgba(163, 200, 255, 0.25);
+  color: white;
+}
+
+.bg-blue {
+  background-color: #274FB6;
+}
+
+.text-blue {
+  color: #274FB6;
+}
+
+.border-blue {
+  border-color: #274FB6;
+}
+
+.outline-blue {
+  color: #274FB6;
+  border: #274FB6;
+}
+.outline-blue :hover {
+  background-color: #274FB6;
+  color: white;
+}
+
+.bg-darkblue {
+  background-color: #00246A;
+}
+
+.text-darkblue {
+  color: #00246A;
+}
+
+.border-darkblue {
+  border-color: #00246A;
+}
+
+.outline-darkblue {
+  color: #00246A;
+  border: #00246A;
+}
+.outline-darkblue :hover {
+  background-color: #00246A;
+  color: white;
+}
+
+.bg-green {
+  background-color: #00BB78;
+}
+
+.text-green {
+  color: #00BB78;
+}
+
+.border-green {
+  border-color: #00BB78;
+}
+
+.outline-green {
+  color: #00BB78;
+  border: #00BB78;
+}
+.outline-green :hover {
+  background-color: #00BB78;
+  color: white;
+}
+
+.bg-orange {
+  background-color: #FF9D29;
+}
+
+.text-orange {
+  color: #FF9D29;
+}
+
+.border-orange {
+  border-color: #FF9D29;
+}
+
+.outline-orange {
+  color: #FF9D29;
+  border: #FF9D29;
+}
+.outline-orange :hover {
+  background-color: #FF9D29;
+  color: white;
+}
+
+.bg-transparent {
+  background-color: transparent;
+}
+
+.text-transparent {
+  color: transparent;
+}
+
+.border-transparent {
+  border-color: transparent;
+}
+
+.outline-transparent {
+  color: transparent;
+  border: transparent;
+}
+.outline-transparent :hover {
+  background-color: transparent;
+  color: white;
+}
+
+.font-size-12 {
+  font-size: 0.75em;
+}
+
+.font-size-14 {
+  font-size: 0.875em;
+}
+
+.font-size-16 {
+  font-size: 1em;
+}
+
+.font-size-18 {
+  font-size: 1.125em;
+}
+
+.font-size-20 {
+  font-size: 1.25em;
+}
+
+.font-size-22 {
+  font-size: 1.375em;
+}
+
+.font-size-24 {
+  font-size: 1.5em;
+}
+
+.font-size-26 {
+  font-size: 1.625em;
+}
+
+.font-size-28 {
+  font-size: 1.75em;
+}
+
+.font-size-30 {
+  font-size: 1.875em;
+}
+
+.font-size-32 {
+  font-size: 2em;
+}
+
+.font-size-34 {
+  font-size: 2.125em;
+}
+
+.font-size-36 {
+  font-size: 2.25em;
+}
+
+.font-size-38 {
+  font-size: 2.375em;
+}
+
+.font-size-40 {
+  font-size: 2.5em;
+}
+
+* {
+  transition: 0.3s;
+}
