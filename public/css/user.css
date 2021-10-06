@@ -313,3 +313,8 @@
 * {
   transition: 0.3s;
 }
+
+.padding {
+  padding-right: 11vw;
+  padding-left: 11vw;
+}

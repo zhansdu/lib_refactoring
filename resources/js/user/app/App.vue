@@ -3,7 +3,7 @@
     <loading-indicator />
     <navbar-vue></navbar-vue>
     <router-view v-slot="{ Component }">
-      <transition name="scale-slide">
+      <transition name="scale">
         <component :is="Component" />
       </transition>
     </router-view>
@@ -21,25 +21,14 @@ export default defineComponent({
 });
 </script>
 <style lang="scss" scoped>
-.scale-slide-enter-active,
-.scale-slide-leave-active {
-  position: absolute;
-  transition: all 0.85s ease;
+.scale-enter-active,
+.scale-leave-active {
+  transition: all 0.5s ease;
 }
 
-.scale-slide-enter-from {
-  left: -100%;
-}
-
-.scale-slide-enter-to {
-  left: 0%;
-}
-
-.scale-slide-leave-from {
-  transform: scale(1);
-}
-
-.scale-slide-leave-to {
-  transform: scale(0.8);
+.scale-enter-from,
+.scale-leave-to {
+  opacity: 0;
+  transform: scale(0.9);
 }
 </style>
