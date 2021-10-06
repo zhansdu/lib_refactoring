@@ -13,9 +13,9 @@
 
 <script lang="ts">
 import { defineComponent, ref } from "@vue/runtime-core";
-import NavbarVue from "./main_view/Navbar.vue";
-import FooterVue from "./main_view/Footer.vue";
-import LoadingIndicator from "./main_view/LoadingIndicator.vue";
+import NavbarVue from "./components/Navbar.vue";
+import FooterVue from "./components/Footer.vue";
+import LoadingIndicator from "./components/LoadingIndicator.vue";
 export default defineComponent({
   components: { NavbarVue, FooterVue, LoadingIndicator },
 });
