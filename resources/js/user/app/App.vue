@@ -16,6 +16,7 @@ import { defineComponent, ref } from "@vue/runtime-core";
 import NavbarVue from "./components/Navbar.vue";
 import FooterVue from "./components/Footer.vue";
 import LoadingIndicator from "./components/LoadingIndicator.vue";
+import { useI18n } from "vue-i18n";
 export default defineComponent({
   components: { NavbarVue, FooterVue, LoadingIndicator },
 });

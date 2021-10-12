@@ -1,23 +1,41 @@
 <template>
   <div class="dropdown">
     <a
-      class="dropdown-toggle"
+      class="dropdwon-toggle"
       data-bs-toggle="dropdown"
-      :class="title.class"
-      :style="title.style"
+      :class="option(options, 'title', 'class')"
+      :style="option(options, 'title', 'style')"
     >
       <span v-if="title.uppercase">{{ $t(title.name).toUpperCase() }}</span>
       <span v-else>{{ $t(title.name) }}</span>
     </a>
     <ul class="dropdown-menu">
       <li v-for="(item, index) in data" :key="index">
-        <a
+        <router-link
           class="dropdown-item"
           :target="item.target"
-          :href="item.link"
-          :class="item.class"
-          :style="item.style"
-          @click="item_click(item)"
+          :to="item.link"
+          :class="option(options, 'item', 'class')"
+          :style="option(options, 'item', 'style')"
+          @click="
+            () => {
+              item_click(item);
+            }
+          "
+          v-if="item.link != null"
+        >
+          {{ $t(item.name ?? item) }}
+        </router-link>
+        <a
+          class="dropdown-item"
+          :class="option(options, 'item', 'class')"
+          :style="option(options, 'item', 'style')"
+          @click="
+            () => {
+              item_click(item);
+            }
+          "
+          v-else
         >
           {{ $t(item.name ?? item) }}
         </a>
@@ -26,31 +44,25 @@
   </div>
 </template>
 <script lang="ts">
-import { PropType } from "@vue/runtime-core";
-import { useI18n } from "vue-i18n";
+import { PropType, defineComponent } from "@vue/runtime-core";
+import { option } from "./mixins/Option";
 
 type Item = {
   name: string;
-  value?: string;
-  link?: string;
+  link?: string | Object;
   invisible?: boolean;
   target?: string;
-  class?: Array<any> | string | Object;
-  style?: Array<any> | string | Object;
 };
 
 type Title = {
   name: string;
   uppercase?: boolean;
-  class?: Array<any> | string | Object;
-  style?: Array<any> | string | Object;
 };
 
-export default {
-  emits: {
-    click: Function,
-  },
+export default defineComponent({
+  emits: ["click", "update:modelValue"],
   props: {
+    modelValue: [Object, String, Boolean, Number, Array],
     title: {
       type: Object as PropType<Title>,
       required: true,
@@ -59,18 +71,22 @@ export default {
       type: Array as PropType<Array<Item>>,
       required: true,
     },
+    options: {
+      type: Object,
+      required: false,
+    },
   },
   setup(props, context) {
-    const { t } = useI18n();
-    const item_click = (item: Item) => {
-      context.emit("click", item.value ?? item.link ?? item.name);
+    const title = props.title;
+
+    const item_click = (item: Item): void => {
+      context.emit("click", item);
+      context.emit("update:modelValue", item);
     };
 
     const data = props.items.filter((item) => !item.invisible);
-    const title = props.title;
 
-    return { t, item_click, data, title };
+    return { item_click, data, title, option };
   },
-};
+});
 </script>
-<style scoped></style>

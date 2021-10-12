@@ -1,16 +1,16 @@
 @use "sass:math";
-$darkgrey:#B5BAC7;
-$grey:#9C9FA7;
-$lightgrey:#F4F4F4;
-$white:#fff;
-$black:#333;
-$red:#9e2629;
-$lightblue:rgba( 163, 200, 255, .25);
-$blue:#274FB6;
-$darkblue:#00246A;
-$green:#00BB78;
-$orange:#FF9D29;
-$transparent:transparent;
+$darkgrey:#B5BAC7 !important;
+$grey:#9C9FA7 !important;
+$lightgrey:#F4F4F4 !important;
+$white:#fff !important;
+$black:#333 !important;
+$red:#9e2629 !important;
+$lightblue:rgba( 163, 200, 255, .25) !important;
+$blue:#274FB6 !important;
+$darkblue:#00246A !important;
+$green:#00BB78 !important;
+$orange:#FF9D29 !important;
+$transparent:transparent !important;
 // setting colors
 $colors: ( "darkgrey":$darkgrey, "grey":$grey, "lightgrey":$lightgrey, "white":$white, "black":$black, "red":$red, "lightblue":$lightblue, "blue":$blue, "darkblue":$darkblue, "green":$green, "orange":$orange, "transparent":$transparent);
 @each $name,
@@ -32,6 +32,12 @@ $color in $colors {
             color: white;
         }
     }
+    .text-hover-#{$name} :hover {
+        color: $color;
+    }
+    .bg-hover-#{$name} :hover {
+        background-color: $color;
+    }
 }
 
 // font sizes from 12 to 40
@@ -43,7 +49,52 @@ $color in $colors {
     }
 }
 
-$transition:.3s;
-* {
-    transition: $transition;
+.transition {
+    transition: .3s;
+}
+
+.cursor-pointer,
+.cursor-pointer>* {
+    cursor: pointer;
+}
+
+.disabled {
+    pointer-events: none;
+}
+
+.rotate {
+    transform: rotate(180deg);
+}
+
+// icons
+svg:not(:root).svg-inline--fa {
+    overflow: visible;
+}
+
+.svg-inline--fa.fa-w-10 {
+    width: 0.625em;
+}
+
+.svg-inline--fa.fa-w-11 {
+    width: 0.6875em;
+}
+
+.svg-inline--fa.fa-w-14 {
+    width: 0.875em;
+}
+
+.svg-inline--fa.fa-w-16 {
+    width: 1em;
+}
+
+.svg-inline--fa.fa-w-18 {
+    width: 1.125em;
+}
+
+.svg-inline--fa {
+    display: inline-block;
+    font-size: inherit;
+    height: 1em;
+    overflow: visible;
+    vertical-align: -0.125em;
 }

@@ -12,6 +12,7 @@ const i18n = createI18n({
         ru,
         kz
     },
+    silentTranslationWarn: true
 })
 
 export default i18n;
