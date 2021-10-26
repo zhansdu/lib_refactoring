@@ -10,7 +10,7 @@
 
 <script lang="ts">
 import { defineComponent } from "@vue/runtime-core";
-import { useGetters, useMutations } from "@user/common/store/helpers";
+import { useGetters, useMutations } from "@/js/user/common/store/helpers";
 
 export default defineComponent({
   setup() {

@@ -1,0 +1,7 @@
+{
+  "vetur.validation.style": false,
+  "typescript.tsdk": "./node_modules/typescript/lib",
+  "typescript.tsserver.experimental.enableProjectDiagnostics": true,
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
+}

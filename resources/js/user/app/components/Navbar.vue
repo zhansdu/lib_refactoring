@@ -37,6 +37,8 @@ export default defineComponent({
     const name = ref([1999]);
     const select_items = ref([19990, 1000, 100001, 2090]);
 
+    checked.value = false;
+
     const options = {
       title: {
         class: ["text-hover-orange", "cursor-pointer"],

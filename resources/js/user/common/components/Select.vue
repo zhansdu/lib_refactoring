@@ -84,14 +84,10 @@ import {option} from './mixins/Option'
 type Title = {
   placeholder?: string;
   label?: string;
-  class?: Array<any> | string | Object;
-  style?: Array<any> | string | Object;
 };
 
 type Item = {
   name: string;
-  class?: Array<any> | string | Object;
-  style?: Array<any> | string | Object;
 };
 
 export default defineComponent({
