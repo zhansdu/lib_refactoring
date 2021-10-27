@@ -23,5 +23,5 @@ module.exports = {
     "no-unused-vars": "off",
     "@typescript-eslint/no-unused-vars-experimental": "error",
   },
-  ignorePatterns: ["public"],
+  ignorePatterns: ["node_modules"],
 };

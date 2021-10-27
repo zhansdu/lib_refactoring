@@ -1,23 +1,16 @@
 <template>
-  <div>
-    <dropdown-vue
-      :title="title"
-      :items="items"
-      :options="options"
-      @click="dropdownClick"
-    />
-    <checkbox-vue
-      @change="dropdownClick"
-      :checked="checked"
-      v-model="checked"
-    />
-    <select-vue
-      :title="{ placeholder: 'Zhake' }"
-      :items="select_items"
-      :multiple="true"
-      v-model="name"
-    />
-  </div>
+  <dropdown-vue
+    :title="title"
+    :items="items"
+    :options="options"
+    @click="dropdownClick"
+  />
+  <checkbox-vue @change="dropdownClick" :checked="checked" v-model="checked" />
+  <select-vue
+    :title="{ placeholder: 'Zhake' }"
+    :items="select_items"
+    v-model="name"
+  />
 </template>
 
 <script lang="ts">
