@@ -1,16 +1,12 @@
 <template>
-  <dropdown-vue
+  <!-- <dropdown-vue
     :title="title"
     :items="items"
     :options="options"
-    @click="dropdownClick"
-  />
-  <checkbox-vue @change="dropdownClick" :checked="checked" v-model="checked" />
-  <select-vue
-    :title="{ placeholder: 'Zhake' }"
-    :items="select_items"
-    v-model="name"
-  />
+    @click="dropdown_click"
+  /> -->
+  <!-- <checkbox-vue @change="dropdown_click" :checked="checked" v-model="checked" /> -->
+  <select-vue :title="{ placeholder: 'Zhake', label: 'name' }" :items="items" @change="dropdown_click" v-model="title" />
 </template>
 
 <script lang="ts">
@@ -21,38 +17,23 @@ import SelectVue from "@user/common/components/Select.vue";
 export default defineComponent({
   components: { DropdownVue, CheckboxVue, SelectVue },
   setup() {
-    const title = {
-      name: "Zhake",
-    };
-    const items = ref([{ name: "Zhan" }]);
-    const checked = ref(true);
-    const dropdownClick = () => {};
-    const name = ref([1999]);
-    const select_items = ref([19990, 1000, 100001, 2090]);
-
-    checked.value = false;
-
-    const options = {
+    const title = ref({ name: "Zhan" });
+    const items = ref([{ name: "Zhake" }, { name: "Johny" }]);
+    const options = ref({
       title: {
-        class: ["text-hover-orange", "cursor-pointer"],
+        class: "text-blue cursor-pointer",
         style: "text-decoration:none",
       },
-      item: {
-        class: ["text-blue text-hover-red"],
-      },
+    });
+    const dropdown_click = (item) => {
+      console.log(item);
     };
-
     return {
       title,
       items,
-      dropdownClick,
-      checked,
-      name,
-      select_items,
       options,
+      dropdown_click,
     };
   },
 });
 </script>
-
-<style></style>

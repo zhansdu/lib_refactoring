@@ -13,8 +13,8 @@
       <li v-for="(item, index) in data" :key="index">
         <router-link
           class="dropdown-item"
-          :target="item.target"
-          :to="item.link"
+          :target="item.target ?? ''"
+          :to="item.link ?? ''"
           :class="option(options, 'item', 'class')"
           :style="option(options, 'item', 'style')"
           @click="
@@ -22,23 +22,9 @@
               item_click(item);
             }
           "
-          v-if="item.link != null"
         >
           {{ $t(item.name ?? item) }}
         </router-link>
-        <a
-          class="dropdown-item"
-          :class="option(options, 'item', 'class')"
-          :style="option(options, 'item', 'style')"
-          @click="
-            () => {
-              item_click(item);
-            }
-          "
-          v-else
-        >
-          {{ $t(item.name ?? item) }}
-        </a>
       </li>
     </ul>
   </div>
@@ -62,7 +48,7 @@ type Title = {
 export default defineComponent({
   emits: ["click", "update:modelValue"],
   props: {
-    modelValue: [Object, String, Boolean, Number, Array],
+    modelValue: [String],
     title: {
       type: Object as PropType<Title>,
       required: true,
@@ -80,8 +66,8 @@ export default defineComponent({
     const title = props.title;
 
     const item_click = (item: Item): void => {
+      context.emit("update:modelValue", item.name ?? item.toString());
       context.emit("click", item);
-      context.emit("update:modelValue", item);
     };
 
     const data = props.items.filter((item) => !item.invisible);
