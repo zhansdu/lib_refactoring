@@ -2,16 +2,10 @@
   "vetur.validation.template": false,
   "vetur.validation.script": false,
   "vetur.validation.style": false,
-  "eslint.format.enable": true,
-  "editor.codeActionsOnSave": {
-    "source.fixAll": true
-  },
-  "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
   "typescript.tsdk": "/node_modules/typescript/lib",
   "typescript.format.enable": true,
   "typescript.tsc.autoDetect": "on",
   "typescript.tsserver.experimental.enableProjectDiagnostics": true,
-  "eslint.options": { "configFile": "/.eslintrc.json" },
-  "eslint.workingDirectories": [ "/resources" ]
-  
 }

@@ -105,7 +105,7 @@ export default defineComponent({
   setup(props, context) {
     const width = ref(0);
     const select = ref<HTMLDivElement>();
-    const shown = ref('');
+    const shown = ref(false);
 
     const show = (show?: boolean): void => {
       if (show == undefined) {

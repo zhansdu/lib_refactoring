@@ -1,11 +1,11 @@
-import { createApp } from "vue";
+import { createSSRApp } from "vue";
 
 import App from "@user/app/App.vue";
 import router from "@/js/user/common/router/router";
 import store from "@/js/user/common/store/store";
 import i18n from "@user/common/locale/locale";
 
-const app = createApp(App);
+const app = createSSRApp(App);
 
 app.use(store);
 app.use(router);
